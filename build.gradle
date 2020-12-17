@@ -7,11 +7,24 @@ buildscript {
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
         // ? kotlin
-        classpath 'org.jetbrains.kotlin:kotlin-stdlib:1.0.5-2'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.5-2'
+        classpath 'org.jetbrains.kotlin:kotlin-stdlib:1.4.10'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10'
         classpath 'org.jetbrains:annotations:13.0'
     }
 }
+
+// ? kotlin
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.4.10"
+}
+
+// ? kotlin
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
 apply plugin: 'net.minecraftforge.gradle'
 
 // ? kotlin
@@ -87,8 +100,8 @@ configurations {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.7'
     // ? kotlin
-    embed 'org.jetbrains.kotlin:kotlin-stdlib:1.0.5-2'
-    compile 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.5-2'
+    embed 'org.jetbrains.kotlin:kotlin-stdlib:1.4.10'
+    compile 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10'
     embed 'org.jetbrains:annotations:13.0'
 }
 
