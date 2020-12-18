@@ -7,21 +7,28 @@ license="MIT"
 [[mods]] #mandatory
 
 # 8. MODID
-modId="<modid>" #mandatory
+modId="scp040jp" #mandatory
 version="${file.jarVersion}" #mandatory
 
 # 9. MODNAME (USER FRIENDLY)
-displayName="<modname>" #mandatory
+displayName="SCP-040-JP" #mandatory
 
 # 10. URL (OPTIONAL)
-displayURL="" #optional
+displayURL="https://github.com/sharo-jef/scp040jp" #optional
 
 # 11. USERNAME (OPTIONAL)
-authors="<username>" #optional
+authors="sharo_jef" #optional
 
 # 12. DESCRIPTION (OPTIONAL)
 description='''
+ねこです。よろしくおねがいします。
 
+MIT LICENSE
+
+CC BY 3.0に基づく表示
+author: Tom Kate
+title: ねこのMODです。
+url: https://www.tntmodders.com/neko/
 '''
 
 [[dependencies.examplemod]] #mandatory
