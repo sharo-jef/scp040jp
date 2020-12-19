@@ -1,6 +1,7 @@
 {
     "effect.scp040jp.scp040jp": "ねこです。",
     "entity.scp040jp.scp040jp": "ねこ",
-    "tile.scp040jp.scp040jp": "ねこ",
-    "block.scp040jp.scp040jp": "ねこ"
+    "tile.scp040jp.scp040jp": "ねこはいます。",
+    "block.scp040jp.scp040jp": "ねこはいます。",
+    "item.scp040jp.scp040jp_spawn_egg": "ねこ"
 }

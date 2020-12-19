@@ -51,7 +51,6 @@ class CommonEventBusSubscriber {
                         EntityTypes.SCP040JP.get().spawn(it.world as ServerWorld, null, null, neko.position, SpawnReason.EVENT, true, false)
                         it.setPosition(it.posX, -100.0, it.posZ)
                         it.health = 0f
-                        Core.logger.info("Hi from ${it.uniqueID}")
                     }
                     val cats = player.world.getEntitiesWithinAABB(
                         EntityType.CAT,
@@ -78,16 +77,28 @@ class CommonEventBusSubscriber {
                             rayTraceResult.block?.block == Blocks.SCP040JP_BLOCK
                             && player.getActivePotionEffect(Effects.SCP040JP_EFFECT) == null
                         ) {
-                            player.addPotionEffect(EffectInstance(Effects.SCP040JP_EFFECT, Int.MAX_VALUE, 0, false, false))
+                            player.addPotionEffect(
+                                EffectInstance(
+                                    Effects.SCP040JP_EFFECT,
+                                    Int.MAX_VALUE,
+                                    0,
+                                    false,
+                                    false
+                                )
+                            )
                             val effect = Effect.get(9)
                             if (effect != null) {
                                 player.addPotionEffect(EffectInstance(effect, 3 * 20, 0, false, false))
                             }
                             PacketHandler.sendToServer(PacketSpawnNeko(player.position), player as ClientPlayerEntity)
                             player.sendMessage(StringTextComponent("ねこです。よろしくおねがいします。"), player.uniqueID)
+                            player.sendChatMessage("ねこが居た！")
                         }
                     }
-                    if (player.world.gameTime and 2047L == 1024L) {
+                    if (
+                        player.getActivePotionEffect(Effects.SCP040JP_EFFECT) != null
+                        && player.world.gameTime and 2047L == 1024L
+                    ) {
                         Minecraft.getInstance().toastGui.add(
                             SystemToast(
                                 SystemToast.Type.NARRATOR_TOGGLE, StringTextComponent("ねこです。"),
@@ -108,6 +119,7 @@ class CommonEventBusSubscriber {
                 event.message.contains("ねこです")
                 || event.message.contains("ねこはいます")
                 || event.message.contains("よろしくおねがいします")
+                || event.message.contains("ねこが居た")
             ) {
                 event.player.world.players.forEach {
                     it.addPotionEffect(EffectInstance(Effects.SCP040JP_EFFECT, Int.MAX_VALUE, 0, false, false))

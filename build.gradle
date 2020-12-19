@@ -7,21 +7,29 @@ buildscript {
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
         // ? kotlin
-        classpath 'org.jetbrains.kotlin:kotlin-stdlib:1.4.10'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10'
+        classpath 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.21'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21'
+        classpath 'org.jetbrains.kotlin:kotlin-reflect:1.4.21'
         classpath 'org.jetbrains:annotations:13.0'
     }
 }
 
 // ? kotlin
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.4.10"
+    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    id 'org.jetbrains.kotlin.kapt' version '1.4.21'
 }
 
 // ? kotlin
 compileKotlin {
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs += [
+            '-Xno-call-assertions',
+            '-Xno-receiver-assertions',
+            '-Xno-param-assertions',
+            '-include-runtime'
+        ]
     }
 }
 
@@ -47,7 +55,7 @@ println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getPro
 
 tasks.withType(Jar) {
     compileJava.options.encoding = 'UTF-8'
-    compileJava.options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    compileJava.options.compilerArgs << '-Xlint:unchecked' << '-Xlint:deprecation'
 }
 
 minecraft {
@@ -101,24 +109,25 @@ configurations {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.12'
     // ? kotlin
-    embed 'org.jetbrains.kotlin:kotlin-stdlib:1.4.10'
-    compile 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10'
-    embed 'org.jetbrains:annotations:13.0'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.21'
+    compile 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21'
+    embed 'org.jetbrains.kotlin:kotlin-reflect:1.4.21'
+    compile 'org.jetbrains:annotations:13.0'
 }
 
 jar {
     manifest {
         attributes([
             // ! 4. MODID
-            "Specification-Title": "scp040jp",
+            'Specification-Title': 'scp040jp',
             // ! 5. USERNAME
-            "Specification-Vendor": "sharo_jef",
-            "Specification-Version": "1",
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
+            'Specification-Vendor': 'sharo_jef',
+            'Specification-Version': '1',
+            'Implementation-Title': project.name,
+            'Implementation-Version': version,
             // ! 6. USERNAME
-            "Implementation-Vendor" :"sharo_jef",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+            'Implementation-Vendor' :'sharo_jef',
+            'Implementation-Timestamp': new Date().format('yyyy-MM-dd\'T\'HH:mm:ssZ')
         ])
     }
 
@@ -138,7 +147,7 @@ publishing {
     }
     repositories {
         maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
+            url 'file:///${project.projectDir}/mcmodsrepo'
         }
     }
 }

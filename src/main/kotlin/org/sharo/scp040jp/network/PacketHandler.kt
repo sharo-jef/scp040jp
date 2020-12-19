@@ -2,17 +2,12 @@ package org.sharo.scp040jp.network
 
 import net.minecraft.client.entity.player.ClientPlayerEntity
 import net.minecraft.entity.player.ServerPlayerEntity
-import net.minecraft.network.PacketBuffer
 import net.minecraft.util.ResourceLocation
 import net.minecraftforge.fml.network.NetworkDirection
 import net.minecraftforge.fml.network.NetworkRegistry
 import net.minecraftforge.fml.network.simple.SimpleChannel
-import org.lwjgl.system.windows.MSG
 import org.sharo.scp040jp.Core
 import org.sharo.scp040jp.network.packet.PacketSpawnNeko
-import sun.reflect.generics.reflectiveObjects.TypeVariableImpl
-import java.nio.ByteBuffer
-import java.util.function.BiConsumer
 
 class PacketHandler {
     companion object {

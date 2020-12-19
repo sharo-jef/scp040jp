@@ -26,7 +26,6 @@ class PacketSpawnNeko {
     // Server Side Only
     fun handle(ctx: Supplier<NetworkEvent.Context>) {
         ctx.get().enqueueWork {
-            Core.logger.info("ENQUEUE WORK")
             val world = ctx.get().sender?.world
             if (world != null) {
                 EntityTypes.SCP040JP.get().spawn(world as ServerWorld, null, null, pos, SpawnReason.EVENT, false, true)

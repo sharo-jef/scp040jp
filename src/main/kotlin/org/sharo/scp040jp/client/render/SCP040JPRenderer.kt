@@ -10,7 +10,7 @@ import org.sharo.scp040jp.entity.SCP040JPEntity
 class SCP040JPRenderer(
     rendererManager: EntityRendererManager
 ) : MobRenderer<SCP040JPEntity, OcelotModel<SCP040JPEntity>>(
-        rendererManager, OcelotModel(1f), .5f
+        rendererManager, OcelotModel<SCP040JPEntity>(.1f), .5f
 ) {
     private val texture: ResourceLocation = ResourceLocation(Core.MODID, "textures/entity/neko.png")
 
