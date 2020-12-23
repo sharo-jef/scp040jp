@@ -66,10 +66,12 @@ SCP-040-JPはワールド内に放置されている井戸です。井戸は石�
 
 よろしくおねがいします
 
-【文章ここまで】
+Author: Tom Kate  
+Title: ねこのMODです。  
+Source: [https://www.tntmodders.com/neko/](https://www.tntmodders.com/neko/)  
+CC BY-SA 3.0
 
-## CC BY 3.0 に基づく表示
-
-Author: Tom Kate<br />
-Title: ねこのMODです。<br />
-URL: [https://www.tntmodders.com/neko/](https://www.tntmodders.com/neko/)
+Author: Ikr_4185  
+Title: SCP-040-JP - ねこですよろしくおねがいします  
+Source: [http://scp-jp.wikidot.com/scp-040-jp](http://scp-jp.wikidot.com/scp-040-jp)  
+CC BY-SA 3.0
