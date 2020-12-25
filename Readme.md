@@ -2,7 +2,8 @@
 
 # SCP-040-JP
 
-![](https://badgen.net/github/license/sharo-jef/scp040jp)
+<!-- ![](https://badgen.net/github/license/sharo-jef/scp040jp) -->
+![](https://badgen.net/badge/license/CC%20BY-SA%203.0/blue)
 ![](https://badgen.net/github/release/sharo-jef/scp040jp)
 ![](https://badgen.net/github/last-commit/sharo-jef/scp040jp)
 
